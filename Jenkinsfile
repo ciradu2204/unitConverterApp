@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'hello '
-        dir(path: 'build') {
+        dir(path: 'build/target') {
           bat 'echo "hello" > result.txt'
           archiveArtifacts 'result.txt'
         }
