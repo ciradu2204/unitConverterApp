@@ -3,11 +3,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'hello '
+        bat 'echo "hello" > "build/result.txt"'
         dir(path: 'build') {
           archiveArtifacts 'result.txt'
         }
 
+        echo 'hello '
       }
     }
 
