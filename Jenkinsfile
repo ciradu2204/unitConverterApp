@@ -1,10 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('Build') {
       steps {
-        pwd()
         echo 'hello '
+        dir(path: 'build') {
+          archiveArtifacts 'result.txt'
+        }
+
       }
     }
 
